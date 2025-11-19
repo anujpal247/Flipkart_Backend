@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 type ServerConfig = {
     PORT: number
+    MONGODB_URI: string
 }
 
 function loadEnv() {
@@ -13,5 +14,7 @@ function loadEnv() {
 loadEnv();
 
 export const serverConfig: ServerConfig = {
-    PORT: Number(process.env.PORT) || 3001
+    PORT: Number(process.env.PORT) || 3001,
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/products_db',
+
 };
